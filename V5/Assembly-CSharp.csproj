@@ -76,6 +76,7 @@
     <Compile Include="Assets/Scenes/Interaction/SelectionScript.cs" />
     <Compile Include="Assets/Scenes/Meshing/Scripts/ToggleMeshClassification.cs" />
     <Compile Include="Assets/Scenes/ImageTracking/ImageTrackingWithMultiplePrefabs/DynamicPrefab.cs" />
+    <Compile Include="Assets/Scenes/Interaction/RotateBox.cs" />
     <Compile Include="Assets/Scenes/ImageTracking/BasicImageTracking/TrackedImageInfoManager.cs" />
     <Compile Include="Assets/Scenes/ARKit/ARCollaborationData/CollaborationNetworkingIndicator.cs" />
     <Compile Include="Assets/Scenes/Camera/BackgroundRenderOrder/TranslateGeometry.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets/Scenes/ARKit/HighResolutionCpuImage/HighResolutionCpuImageSample.cs" />
     <Compile Include="Assets/Scenes/ARKit/CameraExposure/DisplayCameraExposureInformation.cs" />
     <Compile Include="Assets/Scenes/ARKit/ThermalState/Scripts/FeaturesReporting.cs" />
+    <Compile Include="Assets/Scenes/Interaction/TouchBox.cs" />
     <Compile Include="Assets/Scenes/ARKit/CameraExposure/CameraExposureController.cs" />
     <Compile Include="Assets/Scenes/ARKit/ARCollaborationData/CollaborativeSession.cs" />
     <Compile Include="Assets/Scenes/ARKit/ARCollaborationData/DisplayTrackingState.cs" />
