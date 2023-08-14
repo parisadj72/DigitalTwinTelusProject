@@ -71,9 +71,9 @@
     <Compile Include="Assets/Scenes/FaceTracking/DisplayFaceInfo.cs" />
     <Compile Include="Assets/Scenes/Meshing/Scripts/ProjectileLauncher.cs" />
     <Compile Include="Assets/Scenes/Meshing/Scripts/MeshClassificationFracking.cs" />
+    <Compile Include="Assets/Scenes/Interaction/Selection.cs" />
     <Compile Include="Assets/Scenes/Camera/CameraGrain/CameraGrain.cs" />
     <Compile Include="Assets/Scenes/ARCore/ARCoreSessionRecorder.cs" />
-    <Compile Include="Assets/Scenes/Interaction/SelectionScript.cs" />
     <Compile Include="Assets/Scenes/Meshing/Scripts/ToggleMeshClassification.cs" />
     <Compile Include="Assets/Scenes/ImageTracking/ImageTrackingWithMultiplePrefabs/DynamicPrefab.cs" />
     <Compile Include="Assets/Scenes/Interaction/RotateBox.cs" />
@@ -97,6 +97,7 @@
     <Compile Include="Assets/Scenes/Camera/ExifData/ExifDataLogger.cs" />
     <Compile Include="Assets/Scenes/ARKit/CameraWhiteBalance/CameraWhiteBalanceController.cs" />
     <Compile Include="Assets/Scenes/PointClouds/SwitchPointCloudVisualizationMode.cs" />
+    <Compile Include="Assets/AddMeshColider.cs" />
     <Compile Include="Assets/Scenes/PointClouds/ARAllPointCloudPointsParticleVisualizer.cs" />
     <Compile Include="Assets/Scenes/ImageTracking/ImageTrackingWithMultiplePrefabs/PrefabImagePairManager.cs" />
     <Compile Include="Assets/Scenes/ARKit/ThermalState/Scripts/ThermalStateForIOS.cs" />

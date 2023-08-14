@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using TMPro;
 
 public class SelectionScript : MonoBehaviour
 {
     public UnityEvent action;
+    public GameObject label;
+
     // Start is called before the first frame update
     void Start()
     {
+         //label = GameObject.Find("Label");
 
     }
     void Update()
@@ -22,8 +27,29 @@ public class SelectionScript : MonoBehaviour
             {
                 GameObject obj = hit.collider.gameObject;
                 Debug.Log(obj.name);
-                Color newColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-                obj.GetComponent<MeshRenderer>().material.color = newColor;
+                Debug.Log(obj.transform.position);
+
+                
+                GameObject labelDup = Instantiate(GameObject.Find("Label"));
+                //labelDup..GetComponent<Renderer>() = "Please Wait...";
+                //labelDup.GetComponent<TextMeshProUGUI>().text  = "Please Wait...";
+                labelDup.GetComponent<TextMeshPro>().SetText("Please Wait...");
+                labelDup.transform.position = new Vector3(obj.GetComponent<Renderer>().bounds.center.x, obj.GetComponent<Renderer>().bounds.center.y + 1f, obj.GetComponent<Renderer>().bounds.center.z);
+
+
+                /*GameObject newGO = new GameObject("myTextGO");
+                obj.transform.SetParent(this.transform);
+
+                Text myText = obj.AddComponent<Text>();
+                myText.text = "Ta-dah!";
+
+                myText.transform.position = obj.transform.position;
+                */
+
+                //changing color
+                //Color newColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+                //obj.GetComponent<MeshRenderer>().material.color = newColor;
+
                 //obj.GetComponent<SelectionScript>().action.Invoke();
             }
         }
