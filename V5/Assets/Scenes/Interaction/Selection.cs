@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 using TMPro;
+using System;
+using System.Net.Http;
 
 public class SelectionScript : MonoBehaviour
 {
     public UnityEvent action;
     public GameObject label;
+    string throughput = "";
+    //string UploadSpeed = "";
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,10 @@ public class SelectionScript : MonoBehaviour
                 labelDup.GetComponent<TextMeshPro>().SetText("Please Wait...");
                 labelDup.transform.position = new Vector3(obj.GetComponent<Renderer>().bounds.center.x, obj.GetComponent<Renderer>().bounds.center.y + 1f, obj.GetComponent<Renderer>().bounds.center.z);
 
+                
+                FunctEndPoint();
+
+                labelDup.GetComponent<TextMeshPro>().SetText(throughput);
 
                 /*GameObject newGO = new GameObject("myTextGO");
                 obj.transform.SetParent(this.transform);
@@ -73,5 +78,37 @@ public class SelectionScript : MonoBehaviour
     //        }
     //    }
     }
-           
+
+    public async void FunctEndPoint()
+    {
+        string endpointUrl = "https://c17d-136-159-160-121.ngrok-free.app";
+
+        using (HttpClient client = new HttpClient())
+        {
+            try
+            {
+
+                HttpResponseMessage response = await client.GetAsync(endpointUrl);
+
+
+                if (response.IsSuccessStatusCode)
+                {
+
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    throughput = responseBody;
+                    Debug.Log(responseBody);
+
+                }
+                else
+                {
+                    Console.WriteLine($"Failed: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+    }
+
 }

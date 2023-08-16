@@ -66,6 +66,7 @@
     <Compile Include="Assets/Scenes/ARKit/ARKitCoachingOverlay/CustomSessionDelegate.cs" />
     <Compile Include="Assets/Scenes/FaceTracking/ToggleCameraFacingDirectionOnPress.cs" />
     <Compile Include="Assets/Scenes/Camera/BackgroundRenderOrder/CurrentRenderModeText.cs" />
+    <Compile Include="Assets/Scenes/Interaction/Program.cs" />
     <Compile Include="Assets/Scenes/ARKit/CameraFocus/DisplayCameraFocusInformation.cs" />
     <Compile Include="Assets/Scenes/PlaneDetection/PlaneClassificationLabeler.cs" />
     <Compile Include="Assets/Scenes/FaceTracking/DisplayFaceInfo.cs" />
