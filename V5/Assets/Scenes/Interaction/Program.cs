@@ -9,7 +9,7 @@ class Endpoint
     public string s;
     public async void FunctEndPoint()
     {
-        string endpointUrl = "https://c17d-136-159-160-121.ngrok-free.app";
+        string endpointUrl = "https://55c3-136-159-160-121.ngrok-free.app";
 
         using (HttpClient client = new HttpClient())
         {

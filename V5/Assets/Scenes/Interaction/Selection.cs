@@ -3,12 +3,14 @@ using UnityEngine.Events;
 using TMPro;
 using System;
 using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class SelectionScript : MonoBehaviour
 {
     public UnityEvent action;
     public GameObject label;
-    string throughput = "";
+    static string throughput = "";
     //string UploadSpeed = "";
 
     // Start is called before the first frame update
@@ -17,9 +19,8 @@ public class SelectionScript : MonoBehaviour
          //label = GameObject.Find("Label");
 
     }
-    void Update()
+    async void Update()
     {
-        
         if (Input.GetMouseButtonDown(0))
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -37,10 +38,8 @@ public class SelectionScript : MonoBehaviour
                 labelDup.GetComponent<TextMeshPro>().SetText("Please Wait...");
                 labelDup.transform.position = new Vector3(obj.GetComponent<Renderer>().bounds.center.x, obj.GetComponent<Renderer>().bounds.center.y + 1f, obj.GetComponent<Renderer>().bounds.center.z);
 
-                
-                FunctEndPoint();
-
-                labelDup.GetComponent<TextMeshPro>().SetText(throughput);
+                string ans = await FunctEndPoint();
+                labelDup.GetComponent<TextMeshPro>().SetText(ans);
 
                 /*GameObject newGO = new GameObject("myTextGO");
                 obj.transform.SetParent(this.transform);
@@ -79,9 +78,9 @@ public class SelectionScript : MonoBehaviour
     //    }
     }
 
-    public async void FunctEndPoint()
+    public async Task<string> FunctEndPoint()
     {
-        string endpointUrl = "https://c17d-136-159-160-121.ngrok-free.app";
+        string endpointUrl = "https://55c3-136-159-160-121.ngrok-free.app";
 
         using (HttpClient client = new HttpClient())
         {
@@ -96,17 +95,20 @@ public class SelectionScript : MonoBehaviour
 
                     string responseBody = await response.Content.ReadAsStringAsync();
                     throughput = responseBody;
-                    Debug.Log(responseBody);
+                    //Debug.Log(responseBody);
+                    return throughput;
 
                 }
                 else
                 {
                     Console.WriteLine($"Failed: {response.StatusCode}");
+                    return " ";
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
+                return " ";
             }
         }
     }
