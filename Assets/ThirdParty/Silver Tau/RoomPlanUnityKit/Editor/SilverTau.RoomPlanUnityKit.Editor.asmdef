@@ -1,0 +1,18 @@
+{
+    "name": "SilverTau.RoomPlanUnityKit.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:cbe3c34c5ea3d458291b0192a5af50a9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

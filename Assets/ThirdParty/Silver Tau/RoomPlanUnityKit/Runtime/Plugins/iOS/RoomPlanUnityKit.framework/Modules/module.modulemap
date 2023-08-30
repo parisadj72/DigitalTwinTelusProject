@@ -1,0 +1,11 @@
+framework module RoomPlanUnityKit {
+  umbrella header "RoomPlanUnityKit.h"
+  export *
+
+  module * { export * }
+}
+
+module RoomPlanUnityKit.Swift {
+  header "RoomPlanUnityKit-Swift.h"
+  requires objc
+}
